@@ -1,23 +1,63 @@
-/* Page layout and structure positioning */
+/* Theme variables */
 body {
+    --page-bg: #f0f4f8;
+    --text: #333;
+
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--page-bg);
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
 }
 
-/* Colors and typography */
-body {
-    background-color: #f0f4f8;
-    font-family: 'Open Sans', sans-serif;
+/* Pure CSS theme switching (no JavaScript).
+   Uses :has(), supported by modern Chrome/Edge/Safari. */
+body:has(#themeDark:checked) {
+    --page-bg: #2d3142;
+    --text: #e9edf3;
+}
+
+body:has(#themeLight:checked) {
+    --page-bg: #f0f4f8;
+    --text: #333;
+}
+
+/* Logo (top-left box) */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 1px solid #222;
+    padding: 6px 14px;
+    background: #ddd;
+    font-size: 14px;
+}
+
+/* Back button (bottom-left) */
+.back-btn {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: #4fc3f7;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background: #29b6f6;
 }
 
 /* Header styling */
 h1 {
     font-family: 'Bree Serif', serif;
-    color: #333;
+    color: var(--text);
     font-size: 36px;
     margin-top: 50px;
     margin-bottom: 40px;
@@ -35,34 +75,38 @@ h1 {
 }
 
 /* Button styling - all visual details */
-.light-btn {
+.light-btn,
+.dark-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #4fc3f7;
     color: white;
     border: none;
-    padding: 50px;
+    padding: 26px 40px;
     font-size: 24px;
-    width: 300%;
+    width: 360px;
     cursor: pointer;
     text-align: center;
+    user-select: none;
 }
 
 .light-btn:hover {
     background-color: #29b6f6;
 }
 
-.dark-btn {
-    background-color: #4fc3f7;
-    color: white;
-    border: 0;
-    padding: 50px;
-    font-size: 24px;
-    width: 300%;
-    cursor: pointer;
-    text-align: center;
-}
-
 .dark-btn:hover {
     background-color: #2d3142;
 }
 
- testing
+.theme-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body:has(#themeLight:checked) .light-btn,
+body:has(#themeDark:checked) .dark-btn {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+}

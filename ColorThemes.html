@@ -10,16 +10,24 @@
 
 <body>
 
+    <div class="logo">Logo</div>
+
     <header>
         <h1>Color Themes</h1>
     </header>
 
     <main>
         <section class="theme-options">
-            <button class="light-btn">Light Theme</button>
-            <button class="dark-btn">Dark Theme</button>
+            <input class="theme-radio" type="radio" name="theme" id="themeLight" checked>
+            <label class="light-btn" for="themeLight">Light Theme</label>
+
+            <input class="theme-radio" type="radio" name="theme" id="themeDark">
+            <label class="dark-btn" for="themeDark">Dark Theme</label>
         </section>
     </main>
+
+    <!-- Set href to the page you want to return to -->
+    <a class="back-btn" href="Setting_Page.html">Back</a>
 
 </body>
 </html>

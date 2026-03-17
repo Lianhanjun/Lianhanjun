@@ -10,22 +10,27 @@
     <style>
         body {
             margin: 0;
-            height: 50vh;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;   /* horizontal center */
-            align-items: center;       /* vertical center */
-      
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 40px;
         }
 
         h2 {
             font-family: 'Bree Serif', serif;
             text-align: center;
-            margin-top: 30px;
+            margin: 0 0 20px;
             font-size: 50px;
             height: 85px;
         }
         .container {
             text-align: center;
+        }
+
+        .settings-container {
+            width: min(680px, 92vw);
         }
 
         button {
@@ -35,23 +40,54 @@
             justify-content: center;
             gap: 10px;
             margin: 30px auto;
-            padding: 30px 200px;
+            padding: 26px 18px;
             font-size: 30px;
             cursor: pointer;
             width: 100%;
+            border: none;
+            background: #4fc3f7;
+            color: #fff;
+            border-radius: 6px;
         }
 
-        logout {
+       
+        summary.more-btn {
             font-family: 'Open Sans', sans-serif;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 30px auto;
-            padding: 30px 200px;
+            justify-content: space-between;
+            margin: 30px auto 0;
+            padding: 26px 18px;
             font-size: 30px;
             cursor: pointer;
             width: 100%;
+            background: #4fc3f7;
+            color: #fff;
+            border-radius: 6px;
+        }
+
+        summary.more-btn::after {
+            content: "›";
+            font-size: 34px;
+            line-height: 1;
+        }
+
+        details[open] summary.more-btn::after {
+            content: "⌄";
+            font-size: 30px;
+        }
+
+        .more-items {
+            margin-top: 14px;
+        }
+
+        .more-items a {
+            display: block;
+        }
+
+        .more-items button {
+            margin: 16px auto 0;
+            font-size: 28px;
         }
     </style>
 
@@ -77,6 +113,14 @@
             Color Themes
         </button>
 </a>
+
+<details>
+    <summary class="more-btn">More Options</summary>
+    <div class="more-items">
+       <button type="button">Delete Account</button></a>
+    <button type="button">Logout</button></a>
+    </div>
+</details>
 
 
         </div>
