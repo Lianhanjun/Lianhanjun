@@ -1,0 +1,66 @@
+/* Page layout and structure positioning */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Colors and typography */
+body {
+    background-color: #f0f4f8;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header styling */
+h1 {
+    font-family: 'Bree Serif', serif;
+    color: #333;
+    font-size: 36px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Container structure */
+.theme-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Button styling - all visual details */
+.light-btn {
+    background-color: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 50px;
+    font-size: 24px;
+    width: 300%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.light-btn:hover {
+    background-color: #29b6f6;
+}
+
+.dark-btn {
+    background-color: #4fc3f7;
+    color: white;
+    border: 0;
+    padding: 50px;
+    font-size: 24px;
+    width: 300%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dark-btn:hover {
+    background-color: #2d3142;
+}
