@@ -97,6 +97,10 @@ table.account-table {
     border-spacing: 0 12px;
 }
 
+table.account-table td {
+    vertical-align: top;
+}
+
 td.label {
     width: 170px;
     padding-right: 14px;
